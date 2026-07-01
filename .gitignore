@@ -3,15 +3,14 @@
 #that shouldn't be uploaded to the repo because it's not useful to anyone else and can cause conflicts
 
 # Power BI
+**/.pbi/cache.abf
+**/.pbi/editorSettings.json
+**/.pbi/localSettings.json
 *.pbix.bak
-.pbi/localSettings.json
-.pbi/cache.abf
 
-# Temporary system files
+# Archivos temporales del sistema
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# Editor's local configuration files
 .vscode/
 *.tmp
