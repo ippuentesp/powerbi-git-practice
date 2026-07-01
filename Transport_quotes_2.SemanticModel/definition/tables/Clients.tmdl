@@ -1,0 +1,200 @@
+table Clients
+	lineageTag: c797bee8-7a44-4b3b-9efb-556432624065
+
+	column 'Location Account #'
+		dataType: string
+		lineageTag: 2ca6bd37-378d-4f2e-b5d5-687a01b05643
+		summarizeBy: none
+		sourceColumn: Location Account #
+
+		annotation SummarizationSetBy = Automatic
+
+	column Client_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: c69d5c2c-d8bb-4550-a5c0-1c994247f9b3
+		summarizeBy: none
+		sourceColumn: Client_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Name'
+		dataType: string
+		lineageTag: ff58fa1c-4497-425a-b509-52c895131df2
+		summarizeBy: none
+		sourceColumn: Business Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Street Address'
+		dataType: string
+		lineageTag: 766d3507-4a57-4935-a5fb-5e42974b924c
+		summarizeBy: none
+		sourceColumn: Street Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: b5139030-db7e-48c3-b01e-4b9ef8f6d4c1
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Zip Code'
+		dataType: string
+		lineageTag: aa235da8-aa27-4f81-8bd0-88a1c31dbf96
+		summarizeBy: none
+		sourceColumn: Zip Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location Description'
+		dataType: string
+		lineageTag: ef0b69b2-6e0b-4517-adc3-756ff414d8d8
+		summarizeBy: none
+		sourceColumn: Location Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mailing Address'
+		dataType: string
+		lineageTag: 1b6f2e9b-f37c-42d6-8ac1-1283cdbdb801
+		summarizeBy: none
+		sourceColumn: Mailing Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mailing City'
+		dataType: string
+		lineageTag: ba988aae-aaf5-4f42-97bd-801c5bc915e8
+		summarizeBy: none
+		sourceColumn: Mailing City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mailing Zip Code'
+		dataType: string
+		lineageTag: e5b54495-e079-40b8-b08c-4e37e7743485
+		summarizeBy: none
+		sourceColumn: Mailing Zip Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Naics
+		dataType: int64
+		formatString: 0
+		lineageTag: dc3302c5-e462-44d9-9b52-672f7875ab57
+		summarizeBy: none
+		sourceColumn: Naics
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Naics Description'
+		dataType: string
+		lineageTag: 50cabeac-bc77-4d94-9021-7a7a520d4bae
+		summarizeBy: none
+		sourceColumn: Primary Naics Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Council District'
+		dataType: int64
+		formatString: 0
+		lineageTag: b139abb1-17bf-4231-9bb8-3feb2757adf6
+		summarizeBy: none
+		sourceColumn: Council District
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location Start Date'
+		dataType: string
+		lineageTag: 5e74196b-83c2-4824-9ca4-7f52526f7298
+		summarizeBy: none
+		sourceColumn: Location Start Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: cfb1ec2a-43cd-4660-b4ee-a1e38cd5933d
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location Latitude'
+		dataType: double
+		lineageTag: 82d9248a-5797-416c-b939-cef21213a024
+		summarizeBy: none
+		sourceColumn: Location Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Location Longitude'
+		dataType: double
+		lineageTag: d10afbce-febe-4c6d-983a-013164df40bb
+		summarizeBy: none
+		sourceColumn: Location Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Recipient_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: f67245e4-8da0-430d-a93e-385185565ee4
+		summarizeBy: none
+		sourceColumn: Recipient_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recipient Contact Name'
+		dataType: string
+		lineageTag: d1db66d4-623b-41df-8ff5-573883050847
+		summarizeBy: none
+		sourceColumn: Recipient Contact Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recipient Contact Email'
+		dataType: string
+		lineageTag: 18702299-6d58-4bb6-a027-dc7278a16c52
+		summarizeBy: none
+		sourceColumn: Recipient Contact Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recipient Contact Phone Number'
+		dataType: string
+		lineageTag: df96d48e-baca-4108-8f00-c1528db28f9f
+		summarizeBy: none
+		sourceColumn: Recipient Contact Phone Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recipient Contact Designation'
+		dataType: string
+		lineageTag: 33f0932c-abd4-44e0-90f2-fafae43c3193
+		summarizeBy: none
+		sourceColumn: Recipient Contact Designation
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Clients = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\USUARIO\Desktop\Evalueserve\Transport Quotes\Quotes Data.xlsx"), null, true),
+				    Clients_Sheet = Origen{[Item="Clients",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Clients_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Location Account #", type text}, {"Client_ID", Int64.Type}, {"Business Name", type text}, {"Street Address", type text}, {"City", type text}, {"Zip Code", type text}, {"Location Description", type text}, {"Mailing Address", type text}, {"Mailing City", type text}, {"Mailing Zip Code", type text}, {"Naics", Int64.Type}, {"Primary Naics Description", type text}, {"Council District", Int64.Type}, {"Location Start Date", type text}, {"Location", type text}, {"Location Latitude", type number}, {"Location Longitude", type number}, {"Recipient_ID", Int64.Type}, {"Recipient Contact Name", type text}, {"Recipient Contact Email", type text}, {"Recipient Contact Phone Number", type text}, {"Recipient Contact Designation", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

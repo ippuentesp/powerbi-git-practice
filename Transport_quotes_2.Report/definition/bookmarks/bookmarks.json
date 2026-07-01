@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmarksMetadata/1.0.0/schema.json",
+  "items": [
+    {
+      "name": "Bookmark25cda142599f3d85419c",
+      "displayName": "Profit Analysis",
+      "children": [
+        "Bookmark8e1e0e653f46a1ff72b7",
+        "Bookmarke14686f09b0feed974e9"
+      ]
+    },
+    {
+      "name": "f1d16b7d146b65604eb1"
+    },
+    {
+      "name": "fc2ac3a56e87059a47b5"
+    }
+  ]
+}

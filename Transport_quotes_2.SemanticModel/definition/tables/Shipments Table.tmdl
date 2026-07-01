@@ -1,0 +1,176 @@
+table 'Shipments Table'
+	lineageTag: a206db85-c60f-4fbf-ad44-a3fa70c4ebeb
+
+	column 'Shipment ID'
+		dataType: string
+		lineageTag: bb92915a-04bc-482e-8707-569b21bb65c7
+		summarizeBy: none
+		sourceColumn: Shipment ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipment Weight'
+		dataType: int64
+		lineageTag: 47a78fad-eac1-4cf9-99d8-5666dce5a44b
+		summarizeBy: sum
+		sourceColumn: Shipment Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Shipment Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9d5a8cf9-ef53-495a-9d8d-91af122ce725
+		summarizeBy: none
+		sourceColumn: Shipment Date
+
+		variation Variation
+			isDefault
+			relationship: cad9dd94-dec5-47a9-b556-cf4cfa224671
+			defaultHierarchy: LocalDateTable_5f465713-5e02-4b9b-bfab-824297942d8a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Destination Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 059d3e4e-90d6-4bba-8949-93f36decf3ee
+		summarizeBy: none
+		sourceColumn: Destination Date
+
+		variation Variation
+			isDefault
+			relationship: 4a46cf3c-d8ef-421a-8e7a-219f1f6d7c79
+			defaultHierarchy: LocalDateTable_46ca7951-5f6f-4c08-8a3b-1290b3c8ff47.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Fuel Cost'
+		dataType: double
+		lineageTag: efdf7f93-a65a-4bab-bd0d-c6de8db9edfa
+		summarizeBy: sum
+		sourceColumn: Fuel Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Millage
+		dataType: double
+		lineageTag: 7dc79015-7318-446c-b791-ea2456bf2a34
+		summarizeBy: sum
+		sourceColumn: Millage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Shipment Revenue'
+		dataType: int64
+		lineageTag: 5abe1581-bff0-4d30-b047-3beafb9687cf
+		summarizeBy: sum
+		sourceColumn: Shipment Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Asset Type'
+		dataType: string
+		lineageTag: af9a625b-b0df-46df-b934-12b00885a5f1
+		summarizeBy: none
+		sourceColumn: Asset Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROUTE DESCRIPTION'
+		dataType: string
+		lineageTag: 8dc31224-323c-4074-855b-778eb025781b
+		summarizeBy: none
+		sourceColumn: ROUTE DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUOTE_PRICE = LOOKUPVALUE('Quotes Table'[QUOTE_PRICE],'Quotes Table'[SHIPMENT_ID],'Shipments Table'[Shipment ID])
+		formatString: 0
+		lineageTag: 114c254a-12fb-4dec-bf06-18ac4c058305
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAX_PRICE = LOOKUPVALUE('Quotes Table'[PRICE_GUIDE],'Quotes Table'[SHIPMENT_ID],'Shipments Table'[Shipment ID])
+		lineageTag: 1751b4b0-e450-4ab1-8511-8a4b6c483b59
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MIN_PRICE = LOOKUPVALUE('Quotes Table'[MINIMUM_SELING_PRICE],'Quotes Table'[SHIPMENT_ID],'Shipments Table'[Shipment ID])
+		lineageTag: b9bbc2f5-3b31-4dd3-99db-d7516ea00a6e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PIECES = LOOKUPVALUE('Quotes Table'[PIECES],'Quotes Table'[SHIPMENT_ID],'Shipments Table'[Shipment ID])
+		formatString: 0
+		lineageTag: 4a3c4bd7-66bd-422c-b9b5-c46c5e70a20b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ship Revenue' =
+			
+			var revenue = 'Shipments Table'[QUOTE_PRICE]*'Shipments Table'[PIECES]
+			var newrevenue = 'Shipments Table'[PIECES]*IFERROR(((RANDBETWEEN(0,10)+month('Shipments Table'[Shipment Date])*30)*(('Shipments Table'[MAX_PRICE]-'Shipments Table'[MIN_PRICE])/100))+'Shipments Table'[MIN_PRICE],'Shipments Table'[QUOTE_PRICE])
+			return
+			if(revenue='Shipments Table'[Shipment Revenue],revenue,newrevenue)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f2139a15-44a8-4847-b14f-5e0224360c2b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fuel Cost OK' =
+			
+			VAR A = IF('Shipments Table'[Fuel Cost]>30000,'Shipments Table'[Fuel Cost]/100,'Shipments Table'[Fuel Cost])
+			VAR B = IF('Shipments Table'[Fuel Cost]>30000,'Shipments Table'[Fuel Cost]/1000,'Shipments Table'[Fuel Cost])
+			RETURN
+			IF(A>'Shipments Table'[Ship Revenue],B,A)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: bc8eb70d-4773-442f-acb5-6bb808d5aaa2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALIDACION = 'Shipments Table'[Ship Revenue]-'Shipments Table'[Fuel Cost OK]
+		lineageTag: c2b45b19-235c-4ac6-ae0a-3c22465be03f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Shipments Table' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\USUARIO\Desktop\Evalueserve\Transport Quotes\Quotes Data.xlsx"), null, true),
+				    Shipments_Sheet = Origen{[Item="Shipments",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Shipments_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Shipment ID", type text}, {"Shipment Weight", Int64.Type}, {"Shipment Date", type date}, {"Destination Date", type date}, {"Asset Type", type text}, {"ROUTE DESCRIPTION", type text}, {"Fuel Cost", type number}, {"Millage", type number}, {"Shipment Revenue", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

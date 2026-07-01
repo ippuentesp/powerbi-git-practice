@@ -1,0 +1,129 @@
+table Routs
+	lineageTag: a0b570bd-58c3-4366-ba13-4eabae749e51
+
+	column 'ROUTE ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f970341-08a0-45df-98d6-ab4e99d45af7
+		summarizeBy: none
+		sourceColumn: ROUTE ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ROUTE DESCRIPTION'
+		dataType: string
+		lineageTag: 33a88010-c7fc-458e-8c67-dda4ada21aaf
+		summarizeBy: none
+		sourceColumn: ROUTE DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORIGIN
+		dataType: string
+		lineageTag: 22ec1023-915e-4e6d-b20c-4df50cbed80b
+		summarizeBy: none
+		sourceColumn: ORIGIN
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESTINATION
+		dataType: string
+		lineageTag: c7dd3f27-47bc-4bbf-9717-dc3a9b7cc49b
+		summarizeBy: none
+		sourceColumn: DESTINATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ORIGIN LATITUDE'
+		dataType: double
+		lineageTag: 27b9cb56-7a7c-4e8c-a378-8e0344814471
+		summarizeBy: none
+		sourceColumn: ORIGIN LATITUDE
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ORIGIN LONGITUDE'
+		dataType: double
+		lineageTag: 41b6aec1-43e8-40e1-acc4-f36cb1e267ad
+		summarizeBy: none
+		sourceColumn: ORIGIN LONGITUDE
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DESTINATION LATITUDE'
+		dataType: double
+		lineageTag: cfc6629a-007e-499d-be17-548d1443fb60
+		summarizeBy: none
+		sourceColumn: DESTINATION LATITUDE
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DESTINATION LONGITUD'
+		dataType: double
+		lineageTag: 7179d6fc-d4fb-4eb3-93d4-d6ef52a67577
+		summarizeBy: none
+		sourceColumn: DESTINATION LONGITUD
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ORIGIN STATE'
+		dataType: string
+		lineageTag: 3e4b45bc-47aa-4ef8-810b-f5d9d1bce941
+		summarizeBy: none
+		sourceColumn: ORIGIN STATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ORIGIN CITY'
+		dataType: string
+		lineageTag: ace4bdd4-87b3-4472-a723-251aaef7b514
+		summarizeBy: none
+		sourceColumn: ORIGIN CITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DESTINATION STATE'
+		dataType: string
+		lineageTag: f6d51945-435b-415b-8a5b-a948ae8353fc
+		summarizeBy: none
+		sourceColumn: DESTINATION STATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DESTINATION CITY'
+		dataType: string
+		lineageTag: ce5b94c0-498f-40b3-8ac6-951f3c347c82
+		summarizeBy: none
+		sourceColumn: DESTINATION CITY
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Routs = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\USUARIO\Desktop\Evalueserve\Transport Quotes\Quotes Data.xlsx"), null, true),
+				    Routs_Sheet = Origen{[Item="Routs",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Routs_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"ROUTE ID", Int64.Type}, {"ROUTE DESCRIPTION", type text}, {"ORIGIN", type text}, {"DESTINATION", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,35 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-CL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Measure Table","Quotes Table","Shipments Table","Clients","Employees","Routs"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_a403afb9-910c-45fe-9eb4-cbc3295f3b3d
+ref table 'Measure Table'
+ref table Date
+ref table LocalDateTable_0c4b2515-4d8c-4873-a9d7-a10769be1898
+ref table 'Quotes Table'
+ref table LocalDateTable_e50c4dd3-a188-4c24-8e6e-97ccbfbf209a
+ref table LocalDateTable_0c183f96-d73b-4a0d-b890-cf3f276b9d05
+ref table LocalDateTable_6c3ec804-25af-414f-b49f-09fd8fc987a3
+ref table 'Shipments Table'
+ref table LocalDateTable_46ca7951-5f6f-4c08-8a3b-1290b3c8ff47
+ref table LocalDateTable_5f465713-5e02-4b9b-bfab-824297942d8a
+ref table Clients
+ref table Employees
+ref table LocalDateTable_9af354f6-bf6c-414c-99bb-f60e57c1293e
+ref table LocalDateTable_2c8be9f7-3cde-4b88-989c-8a01484aed2e
+ref table LocalDateTable_518bc098-e496-48f4-a7b6-681a29287dcb
+ref table LocalDateTable_854de36b-9143-46ab-b40e-7bf7cefa05da
+ref table Routs
+
+ref cultureInfo en-US
+

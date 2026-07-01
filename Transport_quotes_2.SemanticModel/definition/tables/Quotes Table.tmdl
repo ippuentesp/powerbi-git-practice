@@ -1,0 +1,272 @@
+table 'Quotes Table'
+	lineageTag: 1de8d700-eaa2-45bd-8ef6-d22927ebde64
+
+	column QUOTE_ID
+		dataType: string
+		lineageTag: 9b043e2d-9b97-4a27-8b30-58bda247def7
+		summarizeBy: none
+		sourceColumn: QUOTE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUOTE_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3d886612-df20-45fe-80cc-407b8154dea5
+		summarizeBy: none
+		sourceColumn: QUOTE_DATE
+
+		variation Variation
+			isDefault
+			relationship: c4b46d30-2ca5-43b2-b07a-c263b4e2a488
+			defaultHierarchy: LocalDateTable_e50c4dd3-a188-4c24-8e6e-97ccbfbf209a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column QUOTE_TYPE
+		dataType: string
+		lineageTag: 3d860f62-3a83-417d-a130-f784474d789e
+		summarizeBy: none
+		sourceColumn: QUOTE_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUOTE_SOURCE
+		dataType: string
+		lineageTag: 4487922e-99a9-4416-b2c6-b5d9fc6d5a0a
+		summarizeBy: none
+		sourceColumn: QUOTE_SOURCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALES_EMPLOYEE_CODE
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e7c90c2-b422-40a7-9a6d-90d7ee101526
+		summarizeBy: none
+		sourceColumn: SALES_EMPLOYEE_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESTIMATED_REVENUE
+		dataType: int64
+		formatString: #,0
+		lineageTag: 54085f1e-9801-4425-83f1-af9b3a4b875a
+		summarizeBy: sum
+		sourceColumn: ESTIMATED_REVENUE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PIECES
+		dataType: int64
+		lineageTag: 1bca554e-1465-4f23-9d8c-24f84c2ec3b6
+		summarizeBy: sum
+		sourceColumn: PIECES
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LENGTH
+		dataType: int64
+		lineageTag: 6113bf5b-f255-4895-ab97-0ad33b850a80
+		summarizeBy: sum
+		sourceColumn: LENGTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WIDTH
+		dataType: double
+		lineageTag: ac134c32-f76b-486d-bd24-44265c58031f
+		summarizeBy: sum
+		sourceColumn: WIDTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HEIGHT
+		dataType: int64
+		lineageTag: a89c28e1-40c6-401e-a79f-953fdcbadeb1
+		summarizeBy: sum
+		sourceColumn: HEIGHT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CLIENT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: ee0de354-0767-4369-b9f5-9cfa1d9e0283
+		summarizeBy: none
+		sourceColumn: CLIENT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECIPIENT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: ea88fc4b-305f-41bc-a13a-c9393de40635
+		summarizeBy: count
+		sourceColumn: RECIPIENT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PICK-UP_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1a02bf50-182c-49d1-b48b-64db0bb6f853
+		summarizeBy: none
+		sourceColumn: PICK-UP_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DELIVERY_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6d3b7397-d5f6-4664-bb39-700a235d6997
+		summarizeBy: none
+		sourceColumn: DELIVERY_DATE
+
+		variation Variation
+			isDefault
+			relationship: ba811bd5-e3c0-4dc3-8e56-0a5d66e3b484
+			defaultHierarchy: LocalDateTable_0c183f96-d73b-4a0d-b890-cf3f276b9d05.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column QUOTE_BOOKED
+		dataType: string
+		lineageTag: 73da9ed0-3424-4108-9c48-7ae9ca35ce78
+		summarizeBy: none
+		sourceColumn: QUOTE_BOOKED
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_CONTACT
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0ca673a9-28ba-4dee-ac2b-ca5487b3b2cf
+		summarizeBy: none
+		sourceColumn: LAST_CONTACT
+
+		variation Variation
+			isDefault
+			relationship: c6b0766b-3bf5-4f32-b0e4-5c70f777130e
+			defaultHierarchy: LocalDateTable_6c3ec804-25af-414f-b49f-09fd8fc987a3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SHIPMENT_ID
+		dataType: string
+		lineageTag: de85be93-baa5-4353-898b-792853049ab4
+		summarizeBy: none
+		sourceColumn: SHIPMENT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENT_STATE
+		dataType: string
+		lineageTag: 84127fa5-2f3b-40b6-bb74-dd80d2e6bd91
+		summarizeBy: none
+		sourceColumn: CURRENT_STATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRICE_GUIDE
+		dataType: double
+		lineageTag: e68c821e-2197-4949-b9f0-bee7efa6bc18
+		summarizeBy: sum
+		sourceColumn: PRICE_GUIDE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MINIMUM_SELING_PRICE
+		dataType: double
+		lineageTag: c7629af1-695d-4936-866b-72bc3ed78a11
+		summarizeBy: sum
+		sourceColumn: MINIMUM_SELING_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QUOTE_PRICE
+		dataType: double
+		lineageTag: e0e06227-6df0-4e81-884e-30345376bf69
+		summarizeBy: sum
+		sourceColumn: QUOTE_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CURRENT_STATE_DESCRIPTION
+		dataType: string
+		lineageTag: 155394a7-8cf1-4404-a343-ce5f253bdc5a
+		summarizeBy: none
+		sourceColumn: CURRENT_STATE_DESCRIPTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipment Revenue' = related('Shipments Table'[Shipment Revenue])
+		formatString: #,0
+		lineageTag: a5307414-0614-4329-b04a-0d2e4248d4b2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EMPLOYEES NAME' = RELATED(Employees[SALES_EMPLOYEE_NAME])
+		lineageTag: fc40401e-2498-4a25-b751-86e055a5d48e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quote Type2' =
+			
+			SWITCH(TRUE(),
+			'Quotes Table'[QUOTE_TYPE] = "NATIONAL","National",
+			'Quotes Table'[QUOTE_TYPE] = "SPECIAL","Special",
+			'Quotes Table'[QUOTE_TYPE] = "OVERNIGHT","Overnight",
+			'Quotes Table'[QUOTE_TYPE] = "INTERNATIONAL_OCEAN","Int Ocean",
+			'Quotes Table'[QUOTE_TYPE] = "INTERNATIONAL_AIR","Int Air",
+			'Quotes Table'[QUOTE_TYPE] = "PACKAGE_AND_MAIL","Pack & Mail",
+			"Other"
+			
+			
+			
+			)
+		lineageTag: b8e74c67-0439-483e-a30d-ec7d8cde4746
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Quotes Table' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\USUARIO\Desktop\Evalueserve\Transport Quotes\Quotes Data.xlsx"), null, true),
+				    Quotes_Sheet = Origen{[Item="Quotes",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Quotes_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"QUOTE_ID", type text}, {"QUOTE_DATE", type date}, {"QUOTE_TYPE", type text}, {"QUOTE_SOURCE", type text}, {"SALES_EMPLOYEE_CODE", Int64.Type}, {"ESTIMATED_REVENUE", Int64.Type}, {"PIECES", Int64.Type}, {"LENGTH", Int64.Type}, {"WIDTH", type number}, {"HEIGHT", Int64.Type}, {"CLIENT_ID", Int64.Type}, {"RECIPIENT_ID", Int64.Type}, {"PICK-UP_DATE", type date}, {"DELIVERY_DATE", type date}, {"QUOTE_BOOKED", type text}, {"LAST_CONTACT", type date}, {"SHIPPMENT_ID", type text}, {"CURRENT_STATE", type text}, {"CURRENT_STATE_DESCRIPTION", type text}, {"PRICE_GUIDE", type number}, {"MINIMUM_SELING_PRICE", type number}, {"QUOTE_PRICE", type number}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"SHIPPMENT_ID", "SHIPMENT_ID"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

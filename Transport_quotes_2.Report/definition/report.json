@@ -1,0 +1,114 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU02",
+      "reportVersionAtImport": {
+        "visual": "1.8.89",
+        "report": "2.0.89",
+        "page": "1.3.89"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Custom888518919352508.json",
+      "reportVersionAtImport": {
+        "visual": "1.8.93",
+        "report": "2.0.93",
+        "page": "1.3.93"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "BoxandWhiskerByMAQ1823AD39DT234AB532063E128AX"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU02",
+          "path": "BaseThemes/CY24SU02.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Bluewallpaper003085763858394097.png",
+          "path": "Bluewallpaper003085763858394097.png",
+          "type": "Image"
+        },
+        {
+          "name": "Captura_de_pantalla_2024-08-308530747140213228.png",
+          "path": "Captura_de_pantalla_2024-08-308530747140213228.png",
+          "type": "Image"
+        },
+        {
+          "name": "Custom888518919352508.json",
+          "path": "Custom888518919352508.json",
+          "type": "CustomTheme"
+        }
+      ]
+    },
+    {
+      "name": "lowmap30CFDD5B92F848C88242B1E81C8C33C7",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "lowmap30CFDD5B92F848C88242B1E81C8C33C7.pbiviz.json",
+          "path": "lowmap30CFDD5B92F848C88242B1E81C8C33C7.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

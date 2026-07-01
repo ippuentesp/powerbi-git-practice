@@ -1,0 +1,122 @@
+table 'Measure Table'
+	lineageTag: 84602169-b27f-44bd-9fb0-919c124f16d9
+
+	measure 'SUM Pieces' = SUM('Quotes Table'[PIECES])
+		formatString: 0
+		lineageTag: f7d926b0-f779-463b-ad43-9c2ff74be541
+
+	measure 'SUM Estimated Revenue' = SUM('Quotes Table'[ESTIMATED_REVENUE])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: eb29bf65-5317-48f1-90e4-bb595b0b45ef
+
+	measure 'Total Quotes' = Count('Quotes Table'[QUOTE_ID])
+		formatString: #,0
+		lineageTag: 51d30387-dedb-4d09-8582-2f3c3bd33aca
+
+	measure 'Count Quotes_CPT_WON' = Calculate(Count('Quotes Table'[QUOTE_ID]), OR('Quotes Table'[CURRENT_STATE]="Completed",'Quotes Table'[CURRENT_STATE]="Won"))
+		formatString: #,0
+		lineageTag: f70bcbd2-f151-4fa5-8fa2-fed861372643
+
+	measure 'SUM Total Quotes YTD' = TOTALYTD(Count('Quotes Table'[QUOTE_ID]),'Date'[Date])
+		formatString: #,0
+		lineageTag: 754e766f-f034-4d3b-9474-f7009098e196
+
+	measure 'SUM Estimated Revenue YTD' = TOTALYTD(SUM('Quotes Table'[ESTIMATED_REVENUE]),'Date'[Date])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 531a3589-314d-4144-ad01-939fb8daaeec
+
+	measure 'SUM Pieces YTD' = TOTALYTD(SUM('Quotes Table'[PIECES]),'Date'[Date])
+		formatString: #,0
+		lineageTag: d3824868-35bd-4761-89c5-05cc690f6b1f
+
+	measure 'Total Quotes SMLYTD' = CALCULATE([Total Quotes], SAMEPERIODLASTYEAR('Date'[Date]))
+		formatString: 0
+		lineageTag: a3f7c990-6d9f-4933-9cc6-e5d7366a102e
+
+	measure 'SUM Estimated Revenue SMLYTD' = CALCULATE(SUM('Quotes Table'[ESTIMATED_REVENUE]), SAMEPERIODLASTYEAR('Date'[Date]))
+		lineageTag: ed7a3bac-fe32-4a94-bb43-6648be71aa9b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Shipments billed' = Count('Quotes Table'[SHIPMENT_ID])
+		formatString: 0
+		lineageTag: 01dfdef9-5839-44a1-8e62-698c96627e17
+
+	measure 'Secure Ratio %' = DIVIDE([Count Quotes_CPT_WON],[Total Shipments billed])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 036fca8d-037b-4446-a2f7-879438489225
+
+	measure 'Total Quotes YoY %' = DIVIDE([SUM Total Quotes YTD] - [Total Quotes SMLYTD], [Total Quotes SMLYTD])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e8d57d9f-d01f-46c5-b127-8addc599acbb
+
+	measure 'SUM Estimated Revenue YoY %' = DIVIDE([SUM Estimated Revenue]-[SUM Estimated Revenue SMLYTD],[SUM Estimated Revenue SMLYTD])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ffbd902a-cf85-4c43-9edf-dfb979ca74e6
+
+	measure 'Pieces YoY %' = DIVIDE([SUM Pieces YTD]- [SUM Pieces SMLYTD],[SUM Pieces SMLYTD])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 0ab35069-851b-4679-b2aa-973ba2c10f23
+
+	measure 'SUM Pieces SMLYTD' = CALCULATE(SUM('Quotes Table'[PIECES]), SAMEPERIODLASTYEAR('Date'[Date]))
+		lineageTag: fc9022e7-9b3a-476a-8d8a-b35b6aa1e40e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Secure Ratio % SMLYTD' = CALCULATE([Secure Ratio %], SAMEPERIODLASTYEAR('Date'[Date]))
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 7902b3b7-28d7-4447-996c-cbbf9805ce93
+
+	measure 'Secure Ratio YoY %' = DIVIDE([Secure Ratio %]-[Secure Ratio % SMLYTD],[Secure Ratio % SMLYTD])
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 8af241d2-cdbd-436f-a455-a296ed0b6f67
+
+	measure 'Total Shipments' = Count('Shipments Table'[Shipment ID])
+		formatString: #,0
+		lineageTag: 3c687ab1-c3f4-4876-b21f-2fb9e5cc7c83
+
+	measure 'SUM Shipment Revenue' = SUM('Shipments Table'[Ship Revenue])
+		formatString: #,0
+		lineageTag: ae9a92e3-3961-4568-905c-ec9ba5d25d18
+
+	measure 'Label 0' = 0
+		formatString: 0
+		lineageTag: a0693101-cfeb-4810-b887-287782b04ba3
+
+	measure 'Label Name' = SELECTEDVALUE(Employees[SALES_EMPLOYEE_NAME])
+		lineageTag: 3e9d5121-e838-4a6b-9ec3-93c9def44845
+
+	measure 'Reload time' = "Last Data Reload: 9/26/2024 1:58:01 PM"
+		lineageTag: 55a254cb-7b51-44b3-953c-1daa02850a74
+
+	measure 'Total Fuel Cost' = SUM('Shipments Table'[Fuel Cost OK])
+		lineageTag: 69aa3ff2-a6dd-4503-9004-997fdf493dc2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Profit = [SUM Shipment Revenue]-[Total Fuel Cost]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 59c37f17-5019-42f1-9ccd-df35d5e5c18d
+
+	measure 'Total Rejects' = CALCULATE([Total Quotes],'Quotes Table'[CURRENT_STATE_DESCRIPTION]="Client rejected quote")
+		formatString: 0
+		lineageTag: 6022bca3-6baa-4f06-8f46-e6e2355d84da
+
+	measure '% Rejects' = divide([Total Rejects],[Total Quotes],0)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 831c97e4-6609-45ab-922d-de73f57616b3
+
+	partition 'Measure Table' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlSKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [test = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"test", Int64.Type}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"test"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

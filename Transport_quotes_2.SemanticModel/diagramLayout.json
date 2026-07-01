@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 148,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 417
+          },
+          "nodeIndex": "Measure Table",
+          "nodeLineageTag": "84602169-b27f-44bd-9fb0-919c124f16d9",
+          "size": {
+            "height": 202,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 9,
+            "y": 107
+          },
+          "nodeIndex": "Date",
+          "nodeLineageTag": "ab8ad65c-2739-4d96-a901-97cf8a127ba2",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 403,
+            "y": 2.5
+          },
+          "nodeIndex": "Quotes Table",
+          "nodeLineageTag": "1de8d700-eaa2-45bd-8ef6-d22927ebde64",
+          "size": {
+            "height": 672,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 693,
+            "y": 0
+          },
+          "nodeIndex": "Shipments Table",
+          "nodeLineageTag": "a206db85-c60f-4fbf-ad44-a3fa70c4ebeb",
+          "size": {
+            "height": 314,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 980,
+            "y": 0
+          },
+          "nodeIndex": "Clients",
+          "nodeLineageTag": "c797bee8-7a44-4b3b-9efb-556432624065",
+          "size": {
+            "height": 309,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 692,
+            "y": 382
+          },
+          "nodeIndex": "Employees",
+          "nodeLineageTag": "3d52ee15-be1e-4ae2-8e83-1d2d6016c2c0",
+          "size": {
+            "height": 292,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1264,
+            "y": 249.25
+          },
+          "nodeIndex": "Routs",
+          "nodeLineageTag": "a0b570bd-58c3-4366-ba13-4eabae749e51",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

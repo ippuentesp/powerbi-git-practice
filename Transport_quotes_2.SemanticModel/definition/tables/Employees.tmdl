@@ -1,0 +1,361 @@
+table Employees
+	lineageTag: 3d52ee15-be1e-4ae2-8e83-1d2d6016c2c0
+
+	column SALES_EMPLOYEE_CODE
+		dataType: int64
+		formatString: 0
+		lineageTag: 8f14f7b1-8e33-4aa6-b767-abce52cce3ea
+		summarizeBy: none
+		sourceColumn: SALES_EMPLOYEE_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALES_EMPLOYEE_NAME
+		dataType: string
+		lineageTag: 4e62b050-3a23-40cb-843c-097ed026419c
+		summarizeBy: none
+		sourceColumn: SALES_EMPLOYEE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARRIED_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: f3e6b660-5d61-4559-b3ca-91d28886a927
+		summarizeBy: count
+		sourceColumn: MARRIED_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARITAL_DESC
+		dataType: string
+		lineageTag: e1a0858f-a771-406f-8990-a7cf453e0154
+		summarizeBy: none
+		sourceColumn: MARITAL_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column GENDER_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 14860240-b84d-4f22-bd9d-b11ca0e8debb
+		summarizeBy: count
+		sourceColumn: GENDER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column GENDER
+		dataType: string
+		lineageTag: c33ecea4-84b3-46c5-9dd6-bfe5a7582eea
+		summarizeBy: none
+		sourceColumn: GENDER
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEPT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b8b5ec3-252a-48da-b60f-57f48a33a25b
+		summarizeBy: count
+		sourceColumn: DEPT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DEPARTMENT
+		dataType: string
+		lineageTag: eb2a1d8b-2bea-441f-a06b-54f93351e126
+		summarizeBy: none
+		sourceColumn: DEPARTMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERFSCORE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f700f6f-a2a3-431c-97ef-8ae84ad580e7
+		summarizeBy: count
+		sourceColumn: PERFSCORE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERFORMANCE_SCORE
+		dataType: string
+		lineageTag: 129681ea-ddf7-45b6-86dc-c30370ec1524
+		summarizeBy: none
+		sourceColumn: PERFORMANCE_SCORE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALARY
+		dataType: int64
+		formatString: 0
+		lineageTag: b9c51171-8221-462c-be21-9275ce09d87c
+		summarizeBy: sum
+		sourceColumn: SALARY
+
+		annotation SummarizationSetBy = Automatic
+
+	column POSITION_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: e7f0a709-897a-4b6f-a53e-8c51e2b0ea66
+		summarizeBy: count
+		sourceColumn: POSITION_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column POSITION
+		dataType: string
+		lineageTag: b80cac3a-f93e-44b5-b0f1-b9a5bf5e3a2c
+		summarizeBy: none
+		sourceColumn: POSITION
+
+		annotation SummarizationSetBy = Automatic
+
+	column DOB
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f4d96219-2b17-4022-ac00-90b979b34880
+		summarizeBy: none
+		sourceColumn: DOB
+
+		variation Variación
+			isDefault
+			relationship: f6f5eeb4-9fa2-4ccd-909a-6f5acc4e382a
+			defaultHierarchy: LocalDateTable_9af354f6-bf6c-414c-99bb-f60e57c1293e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EDUCATION
+		dataType: int64
+		formatString: 0
+		lineageTag: 7416bf25-e79f-4de7-b0ea-deb835ac3b1e
+		summarizeBy: sum
+		sourceColumn: EDUCATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column EDUCATION_FIELD
+		dataType: string
+		lineageTag: d1771dae-68ea-4920-a85c-c624c02678db
+		summarizeBy: none
+		sourceColumn: EDUCATION_FIELD
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATEOF_HIRE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fdc95ce4-a1c9-4bbb-9ffa-39f45b0ed1c3
+		summarizeBy: none
+		sourceColumn: DATEOF_HIRE
+
+		variation Variación
+			isDefault
+			relationship: 40c6009c-7671-4190-a7f1-f24aaa5661e5
+			defaultHierarchy: LocalDateTable_2c8be9f7-3cde-4b88-989c-8a01484aed2e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MANAGER_NAME
+		dataType: string
+		lineageTag: 2fdf1bfc-06bc-440f-a8ab-9c9118e23d34
+		summarizeBy: none
+		sourceColumn: MANAGER_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column MANAGER_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 520a32ac-35fd-4da3-bc60-08a0ff9c65e6
+		summarizeBy: count
+		sourceColumn: MANAGER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECRUITMENT_SOURCE
+		dataType: string
+		lineageTag: 0b39ccfd-2266-4e44-8692-87cf502ff145
+		summarizeBy: none
+		sourceColumn: RECRUITMENT_SOURCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column WORK_LIFE_BALANCE_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 13a50e73-67e6-40f7-bf21-8e098e0a258b
+		summarizeBy: count
+		sourceColumn: WORK_LIFE_BALANCE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column WORK_LIFE_BALANCE
+		dataType: string
+		lineageTag: 1c064101-a281-4447-a860-110d0c255564
+		summarizeBy: none
+		sourceColumn: WORK_LIFE_BALANCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column LAST_PERFORMANCE_REVIEW_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 99a09b86-08a2-4530-86c9-fc4ee1f577ad
+		summarizeBy: none
+		sourceColumn: LAST_PERFORMANCE_REVIEW_DATE
+
+		variation Variación
+			isDefault
+			relationship: 7d49f10e-ee9f-4413-9d5e-fa9198ab59f1
+			defaultHierarchy: LocalDateTable_518bc098-e496-48f4-a7b6-681a29287dcb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DAYS_LATE_LAST30
+		dataType: int64
+		formatString: 0
+		lineageTag: 14bc851d-5887-4101-8a96-e4f6cff4c4f0
+		summarizeBy: sum
+		sourceColumn: DAYS_LATE_LAST30
+
+		annotation SummarizationSetBy = Automatic
+
+	column ABSENCES
+		dataType: int64
+		formatString: 0
+		lineageTag: 9aa29360-5e80-4fd1-84e3-e8dcef89341d
+		summarizeBy: sum
+		sourceColumn: ABSENCES
+
+		annotation SummarizationSetBy = Automatic
+
+	column ATTRITION
+		dataType: string
+		lineageTag: 81ba1bb1-fb09-4bd7-8a7b-e6e744bb4fc6
+		summarizeBy: none
+		sourceColumn: ATTRITION
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUSINESS_TRAVEL
+		dataType: string
+		lineageTag: 12dbc981-7423-474c-b03d-47da58d64351
+		summarizeBy: none
+		sourceColumn: BUSINESS_TRAVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATE
+		dataType: string
+		lineageTag: e7a10606-47c0-4007-8f3d-5a03f2d16a64
+		summarizeBy: none
+		sourceColumn: STATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZIP
+		dataType: string
+		lineageTag: 33947010-0f72-41e3-8b66-6e1b83c690cf
+		summarizeBy: none
+		sourceColumn: ZIP
+
+		annotation SummarizationSetBy = Automatic
+
+	column HISPANIC_LATINO
+		dataType: string
+		lineageTag: bf3acf17-4638-4431-a388-30e0b728f07f
+		summarizeBy: none
+		sourceColumn: HISPANIC_LATINO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CITIZEN_DESC
+		dataType: string
+		lineageTag: 65b0cd44-e9db-46f6-bcf5-1528a6b3d93e
+		summarizeBy: none
+		sourceColumn: CITIZEN_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column TERMD
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d3c60be-f549-4960-b5b5-b548efdc8fa4
+		summarizeBy: sum
+		sourceColumn: TERMD
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATEOFTERMINATION
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 50c2ae77-1a4b-40b6-b2c5-288bc7307787
+		summarizeBy: none
+		sourceColumn: DATEOFTERMINATION
+
+		variation Variación
+			isDefault
+			relationship: 1e0684ce-b53c-49ff-a63b-4399c401d2df
+			defaultHierarchy: LocalDateTable_854de36b-9143-46ab-b40e-7bf7cefa05da.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column TERM_REASON
+		dataType: string
+		lineageTag: 0464158d-c458-4341-97fb-239067aebe35
+		summarizeBy: none
+		sourceColumn: TERM_REASON
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMP_STATUS_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: bfce64d8-e48c-4f30-95ce-a73307af8200
+		summarizeBy: count
+		sourceColumn: EMP_STATUS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EMPLOYMENT_STATUS
+		dataType: string
+		lineageTag: 815ba9e2-d7f0-4de5-b496-51a4a17cffa1
+		summarizeBy: none
+		sourceColumn: EMPLOYMENT_STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column37
+		dataType: string
+		lineageTag: ec448d9f-971e-4085-91c6-4c533f32691c
+		summarizeBy: none
+		sourceColumn: Column37
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Employees = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\USUARIO\Desktop\Evalueserve\Transport Quotes\Quotes Data.xlsx"), null, true),
+				    Employees_Sheet = Origen{[Item="Employees",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Employees_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SALES_EMPLOYEE_CODE", Int64.Type}, {"SALES_EMPLOYEE_NAME", type text}, {"MARRIED_ID", Int64.Type}, {"MARITAL_DESC", type text}, {"GENDER_ID", Int64.Type}, {"GENDER", type text}, {"DEPT_ID", Int64.Type}, {"DEPARTMENT", type text}, {"PERFSCORE_ID", Int64.Type}, {"PERFORMANCE_SCORE", type text}, {"SALARY", Int64.Type}, {"POSITION_ID", Int64.Type}, {"POSITION", type text}, {"DOB", type date}, {"EDUCATION", Int64.Type}, {"EDUCATION_FIELD", type text}, {"DATEOF_HIRE", type date}, {"MANAGER_NAME", type text}, {"MANAGER_ID", Int64.Type}, {"RECRUITMENT_SOURCE", type text}, {"WORK_LIFE_BALANCE_ID", Int64.Type}, {"WORK_LIFE_BALANCE", type text}, {"LAST_PERFORMANCE_REVIEW_DATE", type date}, {"DAYS_LATE_LAST30", Int64.Type}, {"ABSENCES", Int64.Type}, {"ATTRITION", type text}, {"BUSINESS_TRAVEL", type text}, {"STATE", type any}, {"ZIP", type any}, {"HISPANIC_LATINO", type text}, {"CITIZEN_DESC", type text}, {"TERMD", Int64.Type}, {"DATEOFTERMINATION", type date}, {"TERM_REASON", type text}, {"EMP_STATUS_ID", Int64.Type}, {"EMPLOYMENT_STATUS", type text}, {"Column37", type any}}),
+				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado", each ([SALES_EMPLOYEE_CODE] <> null))
+				in
+				    #"Filas filtradas"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

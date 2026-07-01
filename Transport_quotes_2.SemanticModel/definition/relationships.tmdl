@@ -1,0 +1,74 @@
+relationship 90059f1a-3fcf-4c2c-b851-0db364363a78
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date.Date
+	toColumn: LocalDateTable_0c4b2515-4d8c-4873-a9d7-a10769be1898.Date
+
+relationship c4b46d30-2ca5-43b2-b07a-c263b4e2a488
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Quotes Table'.QUOTE_DATE
+	toColumn: LocalDateTable_e50c4dd3-a188-4c24-8e6e-97ccbfbf209a.Date
+
+relationship ba811bd5-e3c0-4dc3-8e56-0a5d66e3b484
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Quotes Table'.DELIVERY_DATE
+	toColumn: LocalDateTable_0c183f96-d73b-4a0d-b890-cf3f276b9d05.Date
+
+relationship c6b0766b-3bf5-4f32-b0e4-5c70f777130e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Quotes Table'.LAST_CONTACT
+	toColumn: LocalDateTable_6c3ec804-25af-414f-b49f-09fd8fc987a3.Date
+
+relationship 4a46cf3c-d8ef-421a-8e7a-219f1f6d7c79
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Shipments Table'.'Destination Date'
+	toColumn: LocalDateTable_46ca7951-5f6f-4c08-8a3b-1290b3c8ff47.Date
+
+relationship ff3762a7-144d-4c2f-bab0-abfbcbf12b52
+	fromColumn: 'Quotes Table'.PICK-UP_DATE
+	toColumn: Date.Date
+
+relationship 53ed3b4f-6fe8-4b2c-b0d5-9f6663f5bcb6
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Quotes Table'.SHIPMENT_ID
+	toColumn: 'Shipments Table'.'Shipment ID'
+
+relationship cad9dd94-dec5-47a9-b556-cf4cfa224671
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Shipments Table'.'Shipment Date'
+	toColumn: LocalDateTable_5f465713-5e02-4b9b-bfab-824297942d8a.Date
+
+relationship f6f5eeb4-9fa2-4ccd-909a-6f5acc4e382a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Employees.DOB
+	toColumn: LocalDateTable_9af354f6-bf6c-414c-99bb-f60e57c1293e.Date
+
+relationship 40c6009c-7671-4190-a7f1-f24aaa5661e5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Employees.DATEOF_HIRE
+	toColumn: LocalDateTable_2c8be9f7-3cde-4b88-989c-8a01484aed2e.Date
+
+relationship 7d49f10e-ee9f-4413-9d5e-fa9198ab59f1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Employees.LAST_PERFORMANCE_REVIEW_DATE
+	toColumn: LocalDateTable_518bc098-e496-48f4-a7b6-681a29287dcb.Date
+
+relationship 1e0684ce-b53c-49ff-a63b-4399c401d2df
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Employees.DATEOFTERMINATION
+	toColumn: LocalDateTable_854de36b-9143-46ab-b40e-7bf7cefa05da.Date
+
+relationship 3be76c82-d55f-1f87-83a8-43f131027a07
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Quotes Table'.CLIENT_ID
+	toColumn: Clients.Client_ID
+
+relationship 77d7950a-2854-29c4-de9d-7fa6546396d3
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Quotes Table'.SALES_EMPLOYEE_CODE
+	toColumn: Employees.SALES_EMPLOYEE_CODE
+
+relationship AutoDetected_e6567e6a-6eec-4a63-b859-b98438a06ea7
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Shipments Table'.'ROUTE DESCRIPTION'
+	toColumn: Routs.'ROUTE DESCRIPTION'
+

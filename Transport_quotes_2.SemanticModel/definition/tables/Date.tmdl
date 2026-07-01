@@ -1,0 +1,64 @@
+table Date
+	lineageTag: ab8ad65c-2739-4d96-a901-97cf8a127ba2
+
+	column Date
+		formatString: General Date
+		lineageTag: fd14bbd3-c2cd-4758-8291-991471bd736b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 90059f1a-3fcf-4c2c-b851-0db364363a78
+			defaultHierarchy: LocalDateTable_0c4b2515-4d8c-4873-a9d7-a10769be1898.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: a49867e9-e949-47f2-a86c-015c431f32c4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		lineageTag: 7db5d261-814d-4898-b20e-efd73e21a113
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Nimmber'
+		formatString: 0
+		lineageTag: c2d90d22-5632-4ceb-8088-7fb138eb33ca
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Month Nimmber]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		lineageTag: 69cceca0-cfb7-484d-8f2b-d95a282f4960
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthShort = FORMAT('Date'[Date],"mmm")
+		lineageTag: 68030755-977a-4cf7-b7a2-6242956852ac
+		summarizeBy: none
+		sortByColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = calculated
+		mode: import
+		source = ADDCOLUMNS(CALENDARAUTO(),"Year",YEAR([Date]), "Month", FORMAT([Date],"mm"),"Month Nimmber", Month([Date]), "Quarter", Format([Date],"\QQ"))
+
+	annotation PBI_Id = 4f875c303f204bbea3dab2c440d043a5
+

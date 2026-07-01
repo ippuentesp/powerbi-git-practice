@@ -1,0 +1,29 @@
+{
+  "version": "1.4.9",
+  "author": {
+    "name": "Weiwei Cui",
+    "email": "weiweicui@outlook.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/lowmap30CFDD5B92F848C88242B1E81C8C33C7.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "lowmap30CFDD5B92F848C88242B1E81C8C33C7",
+    "name": "flowmap",
+    "displayName": "Flow map",
+    "version": "1.4.9",
+    "description": "Flowmap is a diagram that visualizes the movement of objects from one location to another.",
+    "supportUrl": "https://weiweicui.github.io/PowerBI-Flowmap/",
+    "gitHubUrl": "https://github.com/weiweicui/PowerBI-Flowmap/",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}
