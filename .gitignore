@@ -1,0 +1,17 @@
+
+#PBIP files generate a .pbi folder with local cache and configurations specific in the local machine
+#that shouldn't be uploaded to the repo because it's not useful to anyone else and can cause conflicts
+
+# Power BI
+*.pbix.bak
+.pbi/localSettings.json
+.pbi/cache.abf
+
+# Temporary system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor's local configuration files
+.vscode/
+*.tmp
